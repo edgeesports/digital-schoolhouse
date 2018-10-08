@@ -1,0 +1,11 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the roles_init() hook (in hooks/roles.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="roles-role-<%%VALUE(id)%%>" class="roles-role"><%%SELECT%%><%%VALUE(role)%%><%%ENDSELECT%%></td>
+		<td id="roles-role_type-<%%VALUE(id)%%>" class="roles-role_type"><%%SELECT%%><%%VALUE(role_type)%%><%%ENDSELECT%%></td>
+		<td id="roles-created_by-<%%VALUE(id)%%>" class="roles-created_by"><%%SELECT%%><%%VALUE(created_by)%%><%%ENDSELECT%%></td>
+		<td id="roles-edited_by-<%%VALUE(id)%%>" class="roles-edited_by"><%%SELECT%%><%%VALUE(edited_by)%%><%%ENDSELECT%%></td>

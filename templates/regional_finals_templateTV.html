@@ -1,0 +1,15 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the regional_finals_init() hook (in hooks/regional_finals.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="regional_finals-team-<%%VALUE(id)%%>" class="regional_finals-team"><%%SELECT%%><%%VALUE(team)%%><%%ENDSELECT%%></td>
+		<td id="regional_finals-matches-<%%VALUE(id)%%>" class="regional_finals-matches"><%%SELECT%%><%%VALUE(matches)%%><%%ENDSELECT%%></td>
+		<td id="regional_finals-wins-<%%VALUE(id)%%>" class="regional_finals-wins"><%%SELECT%%><%%VALUE(wins)%%><%%ENDSELECT%%></td>
+		<td id="regional_finals-losses-<%%VALUE(id)%%>" class="regional_finals-losses"><%%SELECT%%><%%VALUE(losses)%%><%%ENDSELECT%%></td>
+		<td id="regional_finals-draws-<%%VALUE(id)%%>" class="regional_finals-draws"><%%SELECT%%><%%VALUE(draws)%%><%%ENDSELECT%%></td>
+		<td id="regional_finals-points-<%%VALUE(id)%%>" class="regional_finals-points"><%%SELECT%%><%%VALUE(points)%%><%%ENDSELECT%%></td>
+		<td id="regional_finals-created_by-<%%VALUE(id)%%>" class="regional_finals-created_by"><%%SELECT%%><%%VALUE(created_by)%%><%%ENDSELECT%%></td>
+		<td id="regional_finals-edited_by-<%%VALUE(id)%%>" class="regional_finals-edited_by"><%%SELECT%%><%%VALUE(edited_by)%%><%%ENDSELECT%%></td>

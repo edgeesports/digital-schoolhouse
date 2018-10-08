@@ -1,0 +1,12 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the games_init() hook (in hooks/games.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="games-game_logo-<%%VALUE(id)%%>" class="games-game_logo"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(game_logo)%%>&t=games&f=game_logo&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="games-game_title-<%%VALUE(id)%%>" class="games-game_title"><%%SELECT%%><%%VALUE(game_title)%%><%%ENDSELECT%%></td>
+		<td id="games-pegi_rating-<%%VALUE(id)%%>" class="games-pegi_rating"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(pegi_rating)%%>&t=games&f=pegi_rating&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="games-created_by-<%%VALUE(id)%%>" class="games-created_by"><%%SELECT%%><%%VALUE(created_by)%%><%%ENDSELECT%%></td>
+		<td id="games-edited_by-<%%VALUE(id)%%>" class="games-edited_by"><%%SELECT%%><%%VALUE(edited_by)%%><%%ENDSELECT%%></td>

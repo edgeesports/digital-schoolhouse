@@ -1,0 +1,120 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(id)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Profile Pic</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="profile_picImg" src="thumbnail.php?t=students&f=profile_pic&i=<%%VALUE(profile_pic)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">First Name</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(first_name)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Last Name</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(last_name)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Gamertag or Nickname</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(gamertag)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Gender</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(gender)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">My School</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="school<%%RND1%%>"><%%COMBOTEXT(school)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Year Group</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(year_group)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Tutor Group</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(tutor_group)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Role Type</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="role_type<%%RND1%%>"><%%COMBOTEXT(role_type)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Role</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="role<%%RND1%%>"><%%COMBOTEXT(role)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">My Team</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="team<%%RND1%%>"><%%COMBOTEXT(team)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Email</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(email)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Profile Text</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(profile_text)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Overwatch Stats</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="overwatch_stats-link" href="link.php?t=students&f=overwatch_stats&i=<%%VALUE(id)%%>" target="_blank"><%%VALUE(overwatch_stats)%%></a><script>jQuery(function(){ /* */ var e_overwatch_stats = '<%%VALUE(overwatch_stats)%%>'; if(e_overwatch_stats == '' || e_overwatch_stats == '&nbsp;' || e_overwatch_stats == 'blank.gif') jQuery('#overwatch_stats-link').hide(); });</script></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Created by</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(created_by)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Edited by</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(edited_by)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>

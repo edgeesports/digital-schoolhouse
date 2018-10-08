@@ -1,0 +1,113 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">ID</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(id)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Team Logo</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><img id="team_logoImg" src="thumbnail.php?t=teams&f=team_logo&i=<%%VALUE(team_logo)%%>&v=dv" class="img-thumbnail"></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Team Name</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(team_name)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">School</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="school<%%RND1%%>"><%%COMBOTEXT(school)%%></span></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Matches</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(matches)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Wins</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(wins)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Losses</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(losses)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Draws</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(draws)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Points</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(points)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Created by</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(created_by)%%></div>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Edited by</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(edited_by)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<!-- child records -->
+<div class="panel-body">
+	<div id="teams-children"></div>
+</div>
+
+<script>
+	$j(function(){
+		/* prevent loading child records in multiple DVP */
+		if($j('[id=teams-children]').length > 1) return;
+
+		post(
+			'parent-children.php', {
+				ParentTable: 'teams',
+				SelectedID: '<%%VALUE(id)%%>',
+				Operation: 'show-children-printable'
+			},
+			'teams-children',
+			'disable-element',
+			'loading-element',
+			apply_persisting_children
+		);
+
+		$j('form').on('click', '#children-tabs button[data-target]', function(){
+			$j(this).toggleClass('active');
+			persist_expanded_child($j(this).attr('id'));
+		});
+	})
+</script>
+

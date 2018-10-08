@@ -1,0 +1,16 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the teams_init() hook (in hooks/teams.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="teams-team_logo-<%%VALUE(id)%%>" class="teams-team_logo"><img src="thumbnail.php?i=<%%VALUE(team_logo)%%>&t=teams&f=team_logo&v=tv" class="img-thumbnail"></td>
+		<td id="teams-team_name-<%%VALUE(id)%%>" class="teams-team_name"><%%VALUE(team_name)%%></td>
+		<td id="teams-school-<%%VALUE(id)%%>" class="teams-school"><%%VALUE(school)%%></td>
+		<td id="teams-matches-<%%VALUE(id)%%>" class="teams-matches"><%%VALUE(matches)%%></td>
+		<td id="teams-wins-<%%VALUE(id)%%>" class="teams-wins"><%%VALUE(wins)%%></td>
+		<td id="teams-losses-<%%VALUE(id)%%>" class="teams-losses"><%%VALUE(losses)%%></td>
+		<td id="teams-draws-<%%VALUE(id)%%>" class="teams-draws"><%%VALUE(draws)%%></td>
+		<td id="teams-points-<%%VALUE(id)%%>" class="teams-points"><%%VALUE(points)%%></td>
+		<td id="teams-created_by-<%%VALUE(id)%%>" class="teams-created_by"><%%VALUE(created_by)%%></td>

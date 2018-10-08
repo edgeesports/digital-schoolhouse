@@ -1,0 +1,15 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the grand_final_init() hook (in hooks/grand_final.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="grand_final-team-<%%VALUE(id)%%>" class="grand_final-team"><%%VALUE(team)%%></td>
+		<td id="grand_final-matches-<%%VALUE(id)%%>" class="grand_final-matches text-right"><%%VALUE(matches)%%></td>
+		<td id="grand_final-wins-<%%VALUE(id)%%>" class="grand_final-wins text-right"><%%VALUE(wins)%%></td>
+		<td id="grand_final-losses-<%%VALUE(id)%%>" class="grand_final-losses text-right"><%%VALUE(losses)%%></td>
+		<td id="grand_final-draws-<%%VALUE(id)%%>" class="grand_final-draws text-right"><%%VALUE(draws)%%></td>
+		<td id="grand_final-points-<%%VALUE(id)%%>" class="grand_final-points text-right"><%%VALUE(points)%%></td>
+		<td id="grand_final-created_by-<%%VALUE(id)%%>" class="grand_final-created_by"><%%VALUE(created_by)%%></td>
+		<td id="grand_final-edited_by-<%%VALUE(id)%%>" class="grand_final-edited_by"><%%VALUE(edited_by)%%></td>

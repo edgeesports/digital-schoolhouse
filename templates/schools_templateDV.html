@@ -1,0 +1,310 @@
+<!-- Edit this file to change the layout of the detail view form -->
+
+<a name="detail-view"></a>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div class="panel-body" id="schools_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="students_view.php?filterer_school=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="students_link"><i class="glyphicon glyphicon-list-alt"></i> Students</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="students_view.php?filterer_school=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_students_link"><i class="glyphicon glyphicon-list-alt"></i> Students</a>
+			<input type="hidden" id="students_hclink" value="students_view.php?filterer_school=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<a class="hidden-xs btn btn-default btn-lg pull-right hidden hspacer-sm" href="teams_view.php?filterer_school=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="teams_link"><i class="glyphicon glyphicon-list-alt"></i> Teams</a>
+			<a class="visible-xs btn btn-default btn-lg btn-block hidden vspacer-sm" href="teams_view.php?filterer_school=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>" id="xs_teams_link"><i class="glyphicon glyphicon-list-alt"></i> Teams</a>
+			<input type="hidden" id="teams_hclink" value="teams_view.php?filterer_school=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="schools_dv_form">
+			<fieldset class="form-horizontal">
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="id" class="control-label col-lg-3">ID</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="id"><%%VALUE(id)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">School Crest <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#school_crest-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block collapse" id="school_crest-description"><div class="alert alert-info">Upload an image for the School Crest, maximum file size: 100x100 px / 100 kB, supported file types: jpg, jpeg, gif, png</div></span>
+
+						<div class="form-control-static"><div class="pull-left">
+
+						<img src="thumbnail.php?i=<%%VALUE(school_crest)%%>&t=schools&f=school_crest&v=dv" class="img-thumbnail" id="school_crest-image">
+</div>
+
+												<div class="pull-right" style="overflow-x: hidden;">
+							<div class="hidden-md hidden-lg vspacer-lg"></div>
+							<%%UPLOADFILE(school_crest)%%>
+							<%%REMOVEFILE(school_crest)%%>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="school_name" class="control-label col-lg-3">School Name<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="80" type="text" class="form-control" name="school_name" id="school_name" value="<%%VALUE(school_name)%%>" required><div class="text-danger vspacer-md" id="school_name-uniqueness-note" style="display: none;"><%%TRANSLATION(unique field error)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="school_address" class="control-label col-lg-3">Address<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<textarea class="form-control" name="school_address" id="school_address" rows="3"><%%VALUE(school_address)%%></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="school_postcode" class="control-label col-lg-3">Postcode<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+					<div class="col-lg-9">
+						<input maxlength="80" type="text" class="form-control" name="school_postcode" id="school_postcode" value="<%%VALUE(school_postcode)%%>" required>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="contact_name" class="control-label col-lg-3">Contact Name</label>
+					<div class="col-lg-9">
+						<input maxlength="80" type="text" class="form-control" name="contact_name" id="contact_name" value="<%%VALUE(contact_name)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="contact_email" class="control-label col-lg-3">Email</label>
+					<div class="col-lg-9">
+						
+						<div>
+							<a id="contact_email-link" href="mailto:<%%VALUE(contact_email)%%>" target="_blank"><i class="glyphicon glyphicon-envelope text-info" title="<%%VALUE(contact_email)%%>"></i></a>
+							<label for="contact_email"><button type="button" id="contact_email-edit-link" class="btn btn-default hspacer-lg vspacer-sm" data-toggle="collapse" data-target="#contact_email" title="<%%TRANSLATION(Edit)%%>"><i class="glyphicon glyphicon-pencil"></i></button></label>
+						</div>
+						<script>jQuery(function(){ /* */ var e_contact_email = '<%%VALUE(contact_email)%%>'; if(e_contact_email == '' || e_contact_email == '&nbsp;' || e_contact_email == 'blank.gif') jQuery('#contact_email-link').hide(); });</script><input maxlength="80" type="text" class="form-control collapse" name="contact_email" id="contact_email" value="<%%VALUE(contact_email)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="contact_phone" class="control-label col-lg-3">Phone</label>
+					<div class="col-lg-9">
+						<input maxlength="80" type="text" class="form-control" name="contact_phone" id="contact_phone" value="<%%VALUE(contact_phone)%%>">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<div class="col-lg-offset-3 col-lg-9">
+						<div class="checkbox"><label for="esports_coach"><input type="checkbox" name="esports_coach" id="esports_coach" value="1" <%%CHECKED(esports_coach)%%>> Request an esports coach </label>
+							<i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#esports_coach-description"></i>
+							<span class="help-block collapse" id="esports_coach-description"><div class="alert alert-info">Checking this box does not guarantee that you will receive an esports coach, priority will be given to Digital Schoolhouses, thereafter esports coaches will be allocated to non-Digital Schoolhouses on a first come first served basis (according to date registered)</div></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="created_by" class="control-label col-lg-3">Created by</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="created_by"><%%VALUE(created_by)%%></div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<hr class="hidden-md hidden-lg">
+					<label for="edited_by" class="control-label col-lg-3">Edited by</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="edited_by"><%%VALUE(edited_by)%%></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2" id="schools_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="schools-children" class="children-tabs"></div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode){
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			if(!(embedded_mode && AppGini.mobileDevice())){
+				$j('select, input[type=text], textarea').not(':disabled').eq(0).focus();
+			}
+
+			$j('form').eq(0).change(function(){
+				if($j(this).data('already_changed')) return;
+				if($j('#deselect').length) $j('#deselect').removeClass('btn-default').addClass('btn-warning').get(0).lastChild.data = " <%%TRANSLATION(Cancel)%%>";
+				$j(this).data('already_changed', true);
+			});
+
+			$j('a[href="<%%TRANSLATION(ImageFolder)%%>"]').click(function(){ /* */ return false; });
+
+			if(embedded_mode){
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function(){
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"])').each(
+						function(){
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setTimeout(append_embedded, 500);
+				setTimeout(append_embedded, 1500);
+				setTimeout(append_embedded, 2500);
+				setTimeout(append_embedded, 3500);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode){
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			}else{
+				post(
+					'parent-children.php', {
+						ParentTable: 'schools',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'schools-children'
+				);
+			}
+
+			if(!embedded_mode){
+				/* add a horizontal spacer to [add new parent] buttons that don't have a spacered element before them */
+				$j('.add_new_parent').prev(':not(.hspacer-md)').next().addClass('hspacer-md');
+
+				$j('.add_new_parent').click(function(){
+					var pt = $j(this).attr('id').replace(/_add_new$/, '');
+					modal_window({
+						url: pt + '_view.php?addNew_x=1&Embedded=1',
+						close: function(){
+							var field_id = $j('#' + pt + '_add_new').prevAll('input:hidden').eq(0).attr('id');
+							$j('#' + field_id + '-container').select2('focus').select2('focus');
+						},
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function(){
+				var pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				if($j(this).prevAll('input:hidden').length){
+					var parent_id = $j(this).prevAll('input:hidden').eq(0).val();
+				}else{
+					var parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				/* handle radio lookups */
+				if($j(this).prevAll('[type=radio]').length){
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id != undefined && parent_id != ''){
+					var parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link){
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: pt + '_view.php?Embedded=1&SelectedID=' + encodeURIComponent(parent_id),
+								close: function(){
+									var field_id = $j('#' + pt + '_view_parent').prevAll('input:hidden').eq(0).attr('id');
+									$j('#' + field_id + '-container').select2('focus').select2('focus');
+								},
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = pt + '_view.php?Embedded=' + (embedded_mode ? '1' : '') + '&SelectedID=' + encodeURIComponent(parent_id);
+							break;
+						case 'view_parent_new_window':
+							window.open(pt + '_view.php?SelectedID=' + encodeURIComponent(parent_id));
+							break;
+					}
+
+				}
+			});
+
+			enforce_uniqueness('schools', 'school_name');
+
+			/* load admin tools for admin user */
+			if(!add_new_mode){
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=schools&id=<%%URLVALUE(id)%%>',
+					function(resp){
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=schools&id=<%%URLVALUE(id)%%>');
+					}
+				);
+			}
+
+			/* warn user if 'add new' clicked while unsaved changes exist */
+			$j('#addNew').click(function(){
+				if($j('#deselect.btn-warning').length){
+					return confirm('<%%TRANSLATION(discard changes confirm)%%>');
+				}
+			});
+
+		});
+	</script>

@@ -1,0 +1,16 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the schools_init() hook (in hooks/schools.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="schools-school_crest-<%%VALUE(id)%%>" class="schools-school_crest"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(school_crest)%%>&t=schools&f=school_crest&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="schools-school_name-<%%VALUE(id)%%>" class="schools-school_name"><%%SELECT%%><%%VALUE(school_name)%%><%%ENDSELECT%%></td>
+		<td id="schools-school_address-<%%VALUE(id)%%>" class="schools-school_address"><%%SELECT%%><%%VALUE(school_address)%%><%%ENDSELECT%%></td>
+		<td id="schools-school_postcode-<%%VALUE(id)%%>" class="schools-school_postcode"><%%SELECT%%><%%VALUE(school_postcode)%%><%%ENDSELECT%%></td>
+		<td id="schools-contact_name-<%%VALUE(id)%%>" class="schools-contact_name"><%%SELECT%%><%%VALUE(contact_name)%%><%%ENDSELECT%%></td>
+		<td id="schools-contact_email-<%%VALUE(id)%%>" class="schools-contact_email"><a href="mailto:<%%VALUE(contact_email)%%>" title="<%%VALUE(contact_email)%%>" class="btn btn-default"><i class="glyphicon glyphicon-envelope text-info"></i></a></td>
+		<td id="schools-contact_phone-<%%VALUE(id)%%>" class="schools-contact_phone"><%%SELECT%%><%%VALUE(contact_phone)%%><%%ENDSELECT%%></td>
+		<td id="schools-esports_coach-<%%VALUE(id)%%>" class="schools-esports_coach"><%%SELECT%%><%%VALUE(esports_coach)%%><%%ENDSELECT%%></td>
+		<td id="schools-created_by-<%%VALUE(id)%%>" class="schools-created_by"><%%SELECT%%><%%VALUE(created_by)%%><%%ENDSELECT%%></td>

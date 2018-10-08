@@ -1,0 +1,15 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the preliminaries_init() hook (in hooks/preliminaries.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="preliminaries-team-<%%VALUE(id)%%>" class="preliminaries-team"><%%SELECT%%><%%VALUE(team)%%><%%ENDSELECT%%></td>
+		<td id="preliminaries-matches-<%%VALUE(id)%%>" class="preliminaries-matches"><%%SELECT%%><%%VALUE(matches)%%><%%ENDSELECT%%></td>
+		<td id="preliminaries-wins-<%%VALUE(id)%%>" class="preliminaries-wins"><%%SELECT%%><%%VALUE(wins)%%><%%ENDSELECT%%></td>
+		<td id="preliminaries-losses-<%%VALUE(id)%%>" class="preliminaries-losses"><%%SELECT%%><%%VALUE(losses)%%><%%ENDSELECT%%></td>
+		<td id="preliminaries-draws-<%%VALUE(id)%%>" class="preliminaries-draws"><%%SELECT%%><%%VALUE(draws)%%><%%ENDSELECT%%></td>
+		<td id="preliminaries-points-<%%VALUE(id)%%>" class="preliminaries-points"><%%SELECT%%><%%VALUE(points)%%><%%ENDSELECT%%></td>
+		<td id="preliminaries-created_by-<%%VALUE(id)%%>" class="preliminaries-created_by"><%%SELECT%%><%%VALUE(created_by)%%><%%ENDSELECT%%></td>
+		<td id="preliminaries-edited_by-<%%VALUE(id)%%>" class="preliminaries-edited_by"><%%SELECT%%><%%VALUE(edited_by)%%><%%ENDSELECT%%></td>

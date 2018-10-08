@@ -1,0 +1,16 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the teams_init() hook (in hooks/teams.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="teams-team_logo-<%%VALUE(id)%%>" class="teams-team_logo"><%%SELECT%%><img src="thumbnail.php?i=<%%VALUE(team_logo)%%>&t=teams&f=team_logo&v=tv" class="img-thumbnail"><%%ENDSELECT%%></td>
+		<td id="teams-team_name-<%%VALUE(id)%%>" class="teams-team_name"><%%SELECT%%><%%VALUE(team_name)%%><%%ENDSELECT%%></td>
+		<td id="teams-school-<%%VALUE(id)%%>" class="teams-school"><%%SELECT%%><%%VALUE(school)%%><%%ENDSELECT%%></td>
+		<td id="teams-matches-<%%VALUE(id)%%>" class="teams-matches"><%%SELECT%%><%%VALUE(matches)%%><%%ENDSELECT%%></td>
+		<td id="teams-wins-<%%VALUE(id)%%>" class="teams-wins"><%%SELECT%%><%%VALUE(wins)%%><%%ENDSELECT%%></td>
+		<td id="teams-losses-<%%VALUE(id)%%>" class="teams-losses"><%%SELECT%%><%%VALUE(losses)%%><%%ENDSELECT%%></td>
+		<td id="teams-draws-<%%VALUE(id)%%>" class="teams-draws"><%%SELECT%%><%%VALUE(draws)%%><%%ENDSELECT%%></td>
+		<td id="teams-points-<%%VALUE(id)%%>" class="teams-points"><%%SELECT%%><%%VALUE(points)%%><%%ENDSELECT%%></td>
+		<td id="teams-created_by-<%%VALUE(id)%%>" class="teams-created_by"><%%SELECT%%><%%VALUE(created_by)%%><%%ENDSELECT%%></td>
