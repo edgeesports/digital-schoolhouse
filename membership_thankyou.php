@@ -15,10 +15,10 @@
 		<h1 class="TableTitle"><?php echo $Translation['thanks']; ?></h1>
 
 		<img src="images/dsh-logo-white-400x211.png"><br><br>
-		<div class="TableBody">
+		<div class="navbar-brand" style="color:#ffffff;text-transform:none">
 			<?php echo $Translation['sign in no approval']; ?>
 			</div><br>
-		<div class="TableBody">
+		<div class="navbar-brand" style="color:#ffffff;text-transform:none">
 			<?php echo $Translation['sign in wait approval']; ?>
 			</div>
 		</div>
