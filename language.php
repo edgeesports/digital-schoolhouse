@@ -167,7 +167,7 @@
 	// membership_thankyou.php
 	$Translation['thanks']="Thank you for signing up!";
 	$Translation['sign in no approval']="If you are signing up as a student, you can now log in <a href=index.php?signIn=1>here</a>.";
-	$Translation['sign in wait approval']="If you are a teacher registering your school for the first time, please wait for an email from Digital Schoolhouse confirming your registration.";
+	$Translation['sign in wait approval']="If you are a teacher registering your school/college for the first time, please await your email from a member of the Digital Schoolhouse team which will detail your next steps. Once you have completed these next steps, including full payment of your registration fee, you will gain full access to the Edge platform. You will be notified once you have full access to the Edge platform.";
 
 	// membership_signup.php
 	$Translation['username empty']="You must provide a username. Please go back and type a username";
