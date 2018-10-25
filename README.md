@@ -3,6 +3,7 @@
 # LAMP Stack by Bitnami on AWS
 
 LAMP with PHP 7.1 Certified by Bitnami
+
 associate an elastic IP and visit to confirm
 connect to the ip with ssh (putty)
 login as bitnami and sudo su
