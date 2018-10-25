@@ -9,6 +9,7 @@ login as bitnami and sudo su
 cat ./bitnami_credentials returns the default pwd e.g. SaSC4uMScGZz in staging (GqY7BtVcMrGZ in production)
 upload web content to /home/bitnami/htdocs
 chmod -R 777 /home/bitnami/htdocs/images
+chown -R bitnami:daemon /home/bitnami/htdocs/admin
 rm /home/bitnami/htdocs/config.php
 rm /home/bitnami/htdocs/setup.md5
 refresh site to start the AppGini setup routine
@@ -24,7 +25,7 @@ Username: admin
 Email Address: [email address]
 Password / Confirm Password: admin
 
-Error: Unable to write to config file
+# Error: Unable to write to config file
 create a replacement config.php and upload to /htdocs
 replace the target config.php with the local php and edit as follows
 SdbPassword = 'default pwd';
