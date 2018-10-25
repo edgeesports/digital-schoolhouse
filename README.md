@@ -25,9 +25,13 @@ rm /home/bitnami/htdocs/setup.md5
 refresh site to start the AppGini setup routine
 
 # Database Information
+
 MySQL server (host): localhost
+
 Database name: dsh
+
 MySQL Username: root
+
 MySQL password: [default password]
 
 # Admin Information
