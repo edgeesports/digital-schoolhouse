@@ -99,3 +99,8 @@ lego --email="julian@edgeesports.gg" --domains="dsh.edgeesports.gg" --path="/etc
 # Force HTTPS Redirection
 
 https://docs.bitnami.com/aws/infrastructure/lamp/administration/force-https-apache/
+
+# Install s3cmd to schedule backups to AWS S3
+
+https://tecadmin.net/install-s3cmd-manage-amazon-s3-buckets/
+
