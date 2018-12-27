@@ -104,3 +104,15 @@ https://docs.bitnami.com/aws/infrastructure/lamp/administration/force-https-apac
 
 https://tecadmin.net/install-s3cmd-manage-amazon-s3-buckets/
 
+# Initial mirroring of website including backups and images to AWS S3
+
+s3cmd put -r /home/bitnami/htdocs s3://edge-esports-dsh-backups
+
+# Schedule sync of the website including changeable folders /htdocs/admin/backups and /htdocs/images
+
+crontab -e
+
+Add the following line:
+
+s3cmd sync -r /home/bitnami/htdocs s3://edge-esports-dsh-backups
+
