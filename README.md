@@ -112,7 +112,7 @@ s3cmd put -r /home/bitnami/htdocs s3://edge-esports-dsh-backups
 
 crontab -e
 
-Add the following line:
+Add the following line to sync at 03:00 every day:
 
-s3cmd sync -r /home/bitnami/htdocs s3://edge-esports-dsh-backups
+0 3 * * * s3cmd sync -r /home/bitnami/htdocs s3://edge-esports-dsh-backups
 
