@@ -92,9 +92,15 @@ mv lego /usr/local/bin/lego
 
 lego --email="julian@edgeesports.gg" --domains="dsh.edgeesports.gg" --path="/etc/lego" run
 
+/opt/bitnami/ctlscript.sh start
+
 Valid for 90 days then:
 
+/opt/bitnami/ctlscript.sh stop
+
 lego --email="julian@edgeesports.gg" --domains="dsh.edgeesports.gg" --path="/etc/lego" renew
+
+/opt/bitnami/ctlscript.sh start
 
 # Force HTTPS Redirection
 
